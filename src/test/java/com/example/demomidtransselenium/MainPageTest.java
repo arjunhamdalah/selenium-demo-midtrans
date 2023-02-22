@@ -10,6 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+
 import com.github.javafaker.Faker;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -26,6 +29,8 @@ public class MainPageTest {
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/usr/bin/chromium");
         System.setProperty("webdriver.chrome.driver", "/opt/chromedriver/chromedriver");
+        List<String> args = Arrays.asList("--disable-infobars", "--headless", "--no-sandbox", "--disable-gpu", "--disable-setuid-sandbox", "--disable-dev-shm-usage");
+        options.addArguments(args);
         driver = new ChromeDriver(options);
 //        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
