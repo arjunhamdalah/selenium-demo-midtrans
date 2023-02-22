@@ -24,7 +24,7 @@ public class MainPageTest {
     @BeforeEach
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-//        options.setBinary("/opt/hostedtoolcache/chromium/1084013/x64/chrome");
+        options.setBinary("/tmp/chrome-LoQHZ1/chrome");
         System.setProperty("webdriver.chrome.driver", "/opt/chromedriver/chromedriver");
         driver = new ChromeDriver(options);
 //        driver.manage().window().maximize();
