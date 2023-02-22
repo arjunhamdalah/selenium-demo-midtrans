@@ -23,10 +23,10 @@ public class MainPageTest {
 
     @BeforeEach
     public void setUp() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.setBinary("/tmp/chrome-LoQHZ1/chrome");
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/chromium");
         System.setProperty("webdriver.chrome.driver", "/opt/chromedriver/chromedriver");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
 //        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://demo.midtrans.com/");
