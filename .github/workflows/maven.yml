@@ -42,6 +42,7 @@ jobs:
       with:
         # The version to install (exactly as in https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable)
         version: 110.0.5481.77-1
+    - run: which chromium
     - run: which chrome
     - name: Build with Maven
       run: mvn -B package --file pom.xml
